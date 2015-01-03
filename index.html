@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:900' rel='stylesheet' type='text/css'>
   <style>
   body {
     text-align: center;
@@ -30,9 +31,32 @@
   .text {
     text-shadow: 1px 0px 9px rgba(150, 150, 150, 1);
   }
+  .menu {
+    list-style-type: none;
+  }
+  .menu li {
+    background: transparent;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    padding: 3px 8px;
+    display: inline-block;
+    transition: background .25s ease-in-out;
+    -moz-transition: background .25s ease-in-out;
+    -webkit-transition: background .25s ease-in-out;
+  }
+  .menu li:hover {
+    background: white;
+    color: black;
+  }
   </style>
 </head>
 <body>
+  <ul class="menu">
+    <li class="menu-active"><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
   <img class="avatar" src="img/Kitty.png" width="200px" />
   <h1 class="text">Snowstormer</h1>
   <p class="text">Welcome to my site! ^-^</p>
