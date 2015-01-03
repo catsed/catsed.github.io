@@ -35,7 +35,7 @@
   .menu li {
     display: inline;
   }
-  .menu li a:link {
+  .menu li a:link a:visited {
     background: transparent;
     color: white;
     font-family: 'Raleway', sans-serif;
@@ -45,11 +45,7 @@
     -webkit-transition: background .25s ease-in-out;
     text-decoration: none;
   }
-  .menu li:hover a:hover {
-    background: white;
-    color: black;
-  }
-  .menu-active li li:hover a:link a:hover {
+  .menu li:hover a:hover a:active {
     background: white;
     color: black;
   }
@@ -57,7 +53,7 @@
 </head>
 <body>
   <ul class="menu">
-    <li class="menu-active"><a href="index.html">HOME</a></li>
+    <li><a href="index.html">HOME</a></li>
     <li><a href="about.html">ABOUT</a></li>
     <li><a href="projects.html">PROJECTS</a></li>
     <li><a href="contact.html">CONTACT</a></li>
