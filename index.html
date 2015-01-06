@@ -1,81 +1,42 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <title>Snowstormer's Site</title>
-  <link href='//fonts.googleapis.com/css?family=Raleway:900' rel='stylesheet' type='text/css'>
-  <style>
-  html, body {
-    height: 100%;
+  <title>Cats, Cats Everywhere!</title>
+  <script src="http://www.youtube.com/player_api"></script>
+  <script>
+  // create youtube player
+  var player;
+  var IDs = ['INscMGmhmX4', 'fcdxmNCtlLY', 'en8V2rkBdl8', 'QH2-TGUlwu4', '780pM3Zl51Y', 'pRpvdcjkT3k', 'J---aiyznGQ', 'JYKWB5La5Jk', 'e_76NWdG9sw', 'QSjfWpLLxFA', 'eybQQX4lWxE'];
+  var rand = IDs[Math.floor(Math.random() * IDs.length)];
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('player', {
+      height: '100%',
+      width: '100%',
+      videoId: rand,
+      playerVars: {
+        'controls': 0,
+        'disablekb': 0,
+        'showinfo': 0,
+        'cc_load_policy': 0
+      },
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
   }
-  body {
-    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Aurora_borealis_above_Lyngenfjorden%2C_2012_March-3.jpg/1024px-Aurora_borealis_above_Lyngenfjorden%2C_2012_March-3.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  // autoplay video
+  function onPlayerReady(event) {
+    event.target.playVideo();
   }
-  .name h1 {
-    text-align: center;
+  // when video ends
+  function onPlayerStateChange(event) {
+    if(event.data === 0) {
+      location.reload();
+    }
   }
-  .avatar {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .menu {
-    list-style-type: none;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-  .menu li {
-    display: inline;
-  }
-  .menu li a:link {
-    background: transparent;
-    color: white;
-    font-family: 'Raleway', sans-serif;
-    padding: 3px 8px;
-    transition: background .25s ease-in-out;
-    -moz-transition: background .25s ease-in-out;
-    -webkit-transition: background .25s ease-in-out;
-    text-decoration: none;
-  }
-  .menu li:hover a:hover {
-    background: white;
-    color: black;
-  }
-  .menu a:visited {
-    color: white;
-  }
-  .container {
-    margin-top: 40px;
-    margin-bottom: 0;
-    width: 75%;
-    height: 100%;
-    background: white;
-    font-family: Helvetica;
-    color: black;
-    margin-left: 12.5%;
-    margin-right: 12.5%;
-    padding: 10px;
-    -webkit-box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.54);
-    -moz-box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.54);
-    box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.54);
-  }
-  </style>
+  </script>
+  <link rel="icon" href="/src/img/favicon.ico">
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="/">HOME</a></li>
-    <li><a href="about.html">ABOUT</a></li>
-    <li><a href="projects.html">PROJECTS</a></li>
-    <li><a href="contact.html">CONTACT</a></li>
-  </ul>
-  <div class="container">
-    <img class="avatar" src="img/Kitty.png" width="200px" />
-    <h1 class="name">Snowstormer</h1>
-    <p>Welcome to my site! ^-^</p>
-  </div>
+  <div id="player" style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></div>
 </body>
-</html>
