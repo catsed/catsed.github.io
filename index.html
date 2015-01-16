@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cats, Cats Everywhere!</title>
-  <script src="//www.youtube.com/player_api"></script>
+  <title>Loading the awesomeness...</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
   <script>
-  // create youtube player
-  var player;
-  var IDs = ['INscMGmhmX4', 'fcdxmNCtlLY', 'en8V2rkBdl8', 'QH2-TGUlwu4', '780pM3Zl51Y', 'pRpvdcjkT3k', 'J---aiyznGQ', 'JYKWB5La5Jk', 'e_76NWdG9sw', 'QSjfWpLLxFA', 'eybQQX4lWxE', 'ssC1JDCXk2M', 'wu-nA4mGph8', 'XfvU6BNxg3Q', 'mrlkXEDGpIc', 'AGwIlmGhbwQ', 'plWnm7UpsXk', '7dM0TDWA-iY'];
-  var rand = IDs[Math.floor(Math.random() * IDs.length)];
-  function onYouTubePlayerAPIReady() {
-    player = new YT.Player('player', {
-      height: '100%',
-      width: '100%',
-      videoId: rand,
-      playerVars: {
-        'controls': 0,
-        'disablekb': 0,
-        'showinfo': 0,
-        'cc_load_policy': 0
-      },
-      events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-      }
-    });
-  }
-  // autoplay video
-  function onPlayerReady(event) {
-    event.target.playVideo();
-  }
-  // when video ends
-  function onPlayerStateChange(event) {
-    if(event.data === 0) {
-      location.reload();
-    }
-  }
+  $(document).ready(function(){
+    (function($) {
+      $.fn.writeText = function(content) {
+        var contentArray = content.split(""),
+        current = 0,
+        elem = this;
+        setInterval(function() {
+          if(current < contentArray.length) {
+            elem.text(elem.text() + contentArray[current++]);
+          }
+        }, 100);
+      };
+
+    })(jQuery);
+    $("#load1").writeText("Welcome to snowstormer.github.io!");
+    setTimeout(function(){
+      $("#load2").show();
+      setTimeout(function(){
+        $("#load2").writeText("load cats");
+        setTimeout(function() {
+          $("#load3").show();
+          setTimeout(function() {
+            window.location.href = "https://snowstormer.github.io/cats.html";
+          }, 1000)
+        }, 2000);
+      }, 1000);
+    }, 4000);
+  });
   </script>
+  <style>
+  body {
+    background: black;
+  }
+  .text {
+    color: white;
+    font-family: 'VT323', sans-serif;
+    font-size: 20px;
+  }
+  </style>
 </head>
-<body>
-  <div id="player" style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></div>
+<body id="body">
+  <div class="text" id="load1"></div>
+  <div class="text" id="load2" style="display:none">$ </div>
+  <div class="text" id="load3" style="display:none">Loading cats...</div>
 </body>
 </html>
