@@ -1,0 +1,32 @@
+body, html {
+  height: 98%;
+}
+body {
+  background: black;
+  color: white;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow:hidden;
+  padding-bottom: 10px;
+}
+div {
+  font-family: 'Ubuntu Mono', sans-serif;
+  font-size: 18px;
+}
+input[type="text"] {
+  background: transparent;
+  border: transparent;
+  color: inherit;
+  font-family: 'Ubuntu Mono', sans-serif;
+  font-size: 18px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 98%;
+  outline: none;
+  height: 18px;
+}
