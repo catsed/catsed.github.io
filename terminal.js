@@ -3,6 +3,8 @@ $(document).ready(function() {
   var commInd = 0;
   var commands = [];
 
+  var themes = {"normal": {"text": "#FFFFFF", "bg": "#000000"}, "ubuntu": {"text": "#DADADA", "bg": "#300A24"}, "white": {"text": "#000000", "bg": "#FFFFFF"}};
+
   function parseCmd(cmd) {
     if (cmd.split(" ")[0] === "sudo") {
 
@@ -46,7 +48,7 @@ $(document).ready(function() {
       }
 
       else if (cmd.split(" ")[0] === "help") {
-        $(".input").after("<br>List of useful commands:<br>load&nbsp;&nbsp;&nbsp;&nbsp;Loads something. Try \"load --help\" for help on loading.<br>make&nbsp;&nbsp;&nbsp;&nbsp;Makes something, I guess.<br>sudo&nbsp;&nbsp;&nbsp;&nbsp;Administrator privileges (for everyone). Try \"sudo help\" for help with sudo commands.<br>setbg&nbsp;&nbsp;&nbsp;Followed by a hex code. Sets the terminal background color.<br>settext Followed by a hex code. Sets the terminal text color.")
+        $(".input").after("<br>List of useful commands:<br>load&nbsp;&nbsp;&nbsp;&nbsp;Loads something. Type \"load --help\" for help on loading.<br>make&nbsp;&nbsp;&nbsp;&nbsp;Makes something, I guess.<br>sudo&nbsp;&nbsp;&nbsp;&nbsp;Administrator privileges (for everyone). Type \"sudo help\" for help with sudo commands.<br>setbg&nbsp;&nbsp;&nbsp;Followed by a hex code. Sets the terminal background colour.<br>settext Followed by a hex code. Sets the terminal text colour.<br>theme&nbsp;&nbsp;&nbsp;Followed by a theme name. Sets the terminal colours according to chosen theme. Type \"theme --help\" for a list of themes.");
       }
 
       else if (cmd.split(" ")[0] === "load") {
@@ -72,7 +74,6 @@ $(document).ready(function() {
       else if (cmd.split(" ")[0] === "setbg") {
         if (/(^#[0-9A-Fa-f]{6}$)|(^#[0-9A-Fa-f]{3}$)/i.test(cmd.split(" ")[1])) {
           $("body").css("background", cmd.split(" ")[1]);
-          $(".input").after("<br>Done.");
         } else {
           $(".input").after("<br>Invalid hex code.");
         }
@@ -81,9 +82,21 @@ $(document).ready(function() {
       else if (cmd.split(" ")[0] === "settext") {
         if (/(^#[0-9A-Fa-f]{6}$)|(^#[0-9A-Fa-f]{3}$)/i.test(cmd.split(" ")[1])) {
           $("body").css("color", cmd.split(" ")[1]);
-          $(".input").after("<br>Done.");
         } else {
           $(".input").after("<br>Invalid hex code.");
+        }
+      }
+
+      else if (cmd.split(" ")[0] === "theme") {
+        if (cmd.split(" ")[1] !== "--help") {
+          if (cmd.split(" ")[1] in themes) {
+            $("body").css("color", themes[cmd.split(" ")[1]]["text"]);
+            $("body").css("background", themes[cmd.split(" ")[1]]["bg"]);
+          } else {
+            $(".input").after("<br>No such theme exists, please type \"theme --help\" to get a list of themes.");
+          }
+        } else {
+          $(".input").after("<br>List of available themes:<br>normal&nbsp;&nbsp;The normal terminal look (white on black).<br>white&nbsp;&nbsp;&nbsp;Inverted terminal (black on white).<br>ubuntu&nbsp;&nbsp;Ubuntu terminal style (light grey on purple).");
         }
       }
 
