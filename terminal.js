@@ -95,7 +95,7 @@ $(document).ready(function() {
             $(".input").after("<br>No such theme exists, please type \"theme --help\" to get a list of themes.");
           }
         } else {
-          $(".input").after("<br>List of available themes:<br>normal&nbsp;&nbsp;The normal terminal look (white on black).<br>white&nbsp;&nbsp;&nbsp;Inverted terminal (black on white).<br>ubuntu&nbsp;&nbsp;Ubuntu terminal style (light grey on purple).<br>matrix&nbsp;&nbsp;&nbsp;Matrix terminal (light green on black).");
+          $(".input").after("<br>List of available themes:<br>normal&nbsp;&nbsp;The normal terminal look (white on black).<br>white&nbsp;&nbsp;&nbsp;Inverted terminal (black on white).<br>ubuntu&nbsp;&nbsp;Ubuntu terminal style (light grey on purple).<br>matrix&nbsp;&nbsp;Matrix terminal (light green on black).");
         }
       }
 
