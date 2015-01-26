@@ -58,7 +58,7 @@ $(document).ready(function() {
       else if (cmd.split(" ")[0] === "load") {
         var loadThis = cmd.split(" ")[1];
         if (loadThis === "--help") {
-          $(".input").after("<br>cats&nbsp;&nbsp;&nbsp;&nbsp;Loads kittens. :3<br>about&nbsp;&nbsp;&nbsp;Loads some stuff about me.<br>languages Loads info about my knowledge on programming languages.");
+          $(".input").after("<br>cats&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loads kittens. :3<br>about&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loads some stuff about me.<br>languages Loads info about my knowledge on programming languages.");
         } else if (loadThis === "cats") {
           $(".input").after("<br>Loading cats...");
           setTimeout(function() {
