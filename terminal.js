@@ -3,7 +3,12 @@ $(document).ready(function() {
   var commInd = 0;
   var commands = [];
 
-  var themes = {"normal": {"text": "#FFFFFF", "bg": "#000000"}, "ubuntu": {"text": "#DADADA", "bg": "#300A24"}, "white": {"text": "#000000", "bg": "#FFFFFF"}, "matrix": {"text": "#0FFF00", "bg": "#000000"}};
+  var themes = {
+    "normal": {"text": "#FFFFFF", "bg": "#000000"},
+    "ubuntu": {"text": "#DADADA", "bg": "#300A24"},
+    "white": {"text": "#000000", "bg": "#FFFFFF"},
+    "matrix": {"text": "#0FFF00", "bg": "#000000"}
+  };
   function parseCmd(cmd) {
     if (cmd.split(" ")[0] === "sudo") {
 
