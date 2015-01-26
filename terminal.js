@@ -58,7 +58,7 @@ $(document).ready(function() {
       else if (cmd.split(" ")[0] === "load") {
         var loadThis = cmd.split(" ")[1];
         if (loadThis === "--help") {
-          $(".input").after("<br>cats&nbsp;&nbsp;&nbsp;&nbsp;Loads kittens. :3<br>about&nbsp;&nbsp;&nbsp;Loads some stuff about me.");
+          $(".input").after("<br>cats&nbsp;&nbsp;&nbsp;&nbsp;Loads kittens. :3<br>about&nbsp;&nbsp;&nbsp;Loads some stuff about me.<br>languages Loads info about my knowledge on programming languages.");
         } else if (loadThis === "cats") {
           $(".input").after("<br>Loading cats...");
           setTimeout(function() {
@@ -66,6 +66,8 @@ $(document).ready(function() {
           }, 500)
         } else if (loadThis === "about") {
           $(".input").after("<br>Hi. My name is Snowstormer. I live in Estonia. Meow.");
+        } else if (loadThis === "languages") {
+          $(".input").after("<br>I have knowledge in HTML, CSS, Python, Ruby, JavaScript, PHP, C++ and Java. Please note knowledge does not mean I'm a professional in all of these languages. I probably write a lot of unclean code but oh well ¯\\_(ツ)_/¯");
         } else {
           $(".input").after("<br>Cannot load this. Please execute \"load --help\" for help on loading.")
         }
