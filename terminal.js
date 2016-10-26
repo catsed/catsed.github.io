@@ -62,10 +62,10 @@ $(document).ready(function() {
         } else if (loadThis === "cats") {
           $(".input").after("<br>Loading cats...");
           setTimeout(function() {
-            window.location.href = "https://snowstormer.github.io/cats.html";
+            window.location.href = "https://catskittens.github.io/cats.html";
           }, 500)
         } else if (loadThis === "about") {
-          $(".input").after("<br>Hi. My name is Snowstormer. I live in Estonia. Meow.");
+          $(".input").after("<br>Hi. I'm a cat. I live in Estonia. Meow.");
         } else if (loadThis === "languages") {
           $(".input").after("<br>I have knowledge in HTML, CSS, Python, Ruby, JavaScript, PHP, C++ and Java. Please note knowledge does not mean I'm a professional in all of these languages. I probably write a lot of unclean code but oh well ¯\\_(ツ)_/¯");
         } else {
