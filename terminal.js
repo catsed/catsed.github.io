@@ -29,7 +29,7 @@ $(document).ready(function() {
         }
 
         else if (cmd.split(" ")[1] === "ls" || cmd.split(" ")[1] === "cd") {
-          printReply("Listen, sudo is not going to help you here. There is still no files.")
+          printReply("Listen, sudo is not going to help you here. There are still no files.")
         }
 
         else if (cmd.split(" ")[1] === "help") {
