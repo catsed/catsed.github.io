@@ -67,7 +67,7 @@ $(document).ready(function() {
         } else if (loadThis === "cats") {
           printReply("Loading cats...");
           setTimeout(function() {
-            window.location.href = "https://catskittens.github.io/cats.html";
+            window.location.href = "/cats.html";
           }, 500)
         } else if (loadThis === "about") {
           printReply("Hi. I'm a cat. I live in Estonia. Meow.");
