@@ -101,7 +101,7 @@ $(document).ready(function() {
       }
 
       else if (cmd[0] === "theme") {
-        if (cmd[1] !== "--help" || cmd[1] !== "-h") {
+        if (cmd[1] !== "--help" && cmd[1] !== "-h") {
           if (cmd[1] in themes) {
             $("body").css("color", themes[cmd[1]]["text"]);
             $("body").css("background", themes[cmd[1]]["bg"]);
