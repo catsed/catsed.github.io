@@ -32,6 +32,7 @@
   // when video ends
   function onPlayerStateChange(event) {
     if(event.data === 0) {
+      console.log("end");
       var rand = IDs[Math.floor(Math.random() * IDs.length)];
       event.target.loadVideoById(rand);
     }
